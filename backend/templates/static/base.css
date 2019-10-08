@@ -1,0 +1,162 @@
+/* Background */
+body {
+    background: url("./images/bg.jpg") no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover !important;
+    
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.overlay-white {
+    background-color: rgba(255,255,255,1);
+    width: 400px;
+    height: 400px;
+    padding: 50px;
+}
+
+.overlay-whiter {
+    background-color: rgba(255,255,255,1);
+}
+
+.expanded-medium {
+    width: 50%;
+    min-width: 400px;
+    height: 80%;
+    padding: 0;
+}
+
+.expanded-full {
+    width: 50%;
+    min-width: 400px;
+    height: 80%;
+    padding: 0;
+}
+
+/* Text */
+p, h1, h2, h3, h4 {
+    font-family: 'Roboto';
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+p {
+    font-size 15px;
+}
+
+/* Centering things */
+
+.center {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.column {
+    flex-direction: column !important;
+}
+
+.flex-full {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.margin-small-side {
+    margin: 0 2vw;
+}
+
+.margin-small {
+    margin: 2vh 2vw;
+}
+
+.margin-medium {
+    margin: 5vh 0;
+}
+
+.margin-large {
+    margin: 10vh 0;
+}
+
+/* Buttons */
+.btn {
+    color: rgba(0, 38, 66, 1);
+    background-color: rgba(220,220,220,1);
+}
+
+.btn-large {
+    padding: 10px 20px;
+}
+
+.btn-medium {
+    padding: 10px 20px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgba(200,200,200,1);
+}
+
+/* About */
+#aboutContent {
+    opacity: 0;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.appear {
+    opacity: 1;
+}
+
+.disappear {
+    opacity: 0;
+}
+
+/* Sofa */
+#sofaContent {
+    opacity: 0;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#sofaImage {
+    height: 350px;
+    width: auto;
+    max-width: 95%;
+}
+
+/* Animations */
+.transform {
+    transition: all 0.3s ease;
+}

@@ -97,5 +97,4 @@ class BookCrossing:
             return 0
 
 
-#crime = '74286'
 

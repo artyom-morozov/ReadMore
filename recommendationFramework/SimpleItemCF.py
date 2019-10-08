@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed May  9 10:10:04 2018
 
-@author: Frank
-"""
 
 from BookCrossing import BookCrossing
 from surprise import KNNBasic
@@ -47,7 +43,7 @@ for itemID, rating in trainSet.ur[testUserInnerID]:
     
 # Get top-rated items from similar users:
 pos = 0
-for itemID, ratingSum in sorted(candidates.items(), key=itemgetter(1), reverse=True):
+for itemID, ratingSum in sorted(candidates, key=lambda tup: tup[1], reverse=True):
     if not itemID in watched:
         bookID = trainSet.to_raw_iid(itemID)
         print(bk.getBookName(bookID), ratingSum)

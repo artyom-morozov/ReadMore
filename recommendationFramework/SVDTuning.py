@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu May  3 11:11:13 2018
 
-@author: Frank
-"""
 
 from BookCrossing import BookCrossing
 from surprise import SVD
@@ -16,9 +12,9 @@ import numpy as np
 
 def LoadBookCrossingData():
     ml = BookCrossing()
-    print("Loading movie ratings...")
+    print("Loading book ratings...")
     data = ml.loadBookCrossingLatestSmall()
-    print("\nComputing movie popularity ranks so we can measure novelty later...")
+    print("\nComputing book popularity ranks so we can measure novelty later...")
     rankings = ml.getPopularityRanks()
     return (ml, data, rankings)
 
