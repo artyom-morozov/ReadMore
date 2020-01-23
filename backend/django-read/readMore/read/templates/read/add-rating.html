@@ -1,0 +1,23 @@
+{% extends "read/base.html" %}
+{% block content %}
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend  class="text-center border-bottom mb-4">Add Rating</legend>
+            <div class="row flex-nowrap">
+                {% for radio in form.value %}
+                <div class="col-md-auto p-0">
+                    <span onmouseover="onStarHover(this)" onmouseout="onStarMove(this)" id='star{{ forloop.counter }}' class="fa star fa-star">
+                        {{ radio.tag }}
+                    </span>
+                </div>
+                {% endfor %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

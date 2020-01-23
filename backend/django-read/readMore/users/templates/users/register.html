@@ -1,0 +1,29 @@
+{% extends "read/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="background">
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-xl-6">
+                <div class="card card-form">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <fieldset class="form-group">
+                            <legend  class="text-center border-bottom mb-4">Join <strong>Read.More</strong> today!</legend>
+                            {{ form|crispy }}
+                        </fieldset>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">Sign Up</button>
+                        </div>
+                    </form>
+                    <div class="border-top pt-3 text-center">
+                        <small class="text-mutet" >
+                            Already Have An Account? <a href="{% url 'login' %}" class="ml-2 link ">Sign In</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

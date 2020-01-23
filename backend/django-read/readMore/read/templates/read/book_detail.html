@@ -1,0 +1,59 @@
+{% extends "read/base.html" %}
+{% block content %}
+    {% csrf_token %}
+    <div class="container">
+        <div style="border-bottom: 3px solid red !important;" class="row border-bottom justify-content-center">
+            <h1 class="book-name">
+                    {{ object.title }}
+            </h1>
+        </div>
+        <div style="margin-top: 50px;" class="row flex-nowrap justify-content-between">
+            <div style="padding-left: 0;" class="col-md-auto">
+                <img class="book-img" src="{{ object.img_url }}" alt="book">
+            </div>
+            <div class="col-md-8">
+                    <p style="font-size: 18px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>   
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="no-padding col-md-auto">
+                <span class="badge badge-secondary">Action</span>
+            </div>
+            <div class="no-padding col-md-auto">
+                <span class="badge badge-secondary">Romance</span>
+            </div>
+            <div class="no-padding col-md-auto">
+                <span class="badge badge-secondary">Novel</span>
+            </div>
+        </div>
+        <div style="margin-top: 50px;" class="row justify-content-center">
+            <div class="col-md-auto">
+                <h1>Rate it now!</h1>
+            </div>
+        </div>
+        <div class="row m-top justify-content-center">
+
+            <div class="col-md-auto">
+                <div class="row flex-nowrap">
+                        <div class="col p-0">
+                            <span onmouseover="onStarHover(this)" onclick="onStarClick(this)" onmouseout="onStarMove(this)" id='star1' class="fa star fa-star"></span>
+                        </div>
+                        <div class="col p-0">
+                            <span onmouseover="onStarHover(this)" onclick="onStarClick(this)" onmouseout="onStarMove(this)" id='star2' class="fa star fa-star"></span>
+                        </div>
+                        <div class="col p-0">
+                            <span onmouseover="onStarHover(this)" onclick="onStarClick(this)" onmouseout="onStarMove(this)" id='star3' class="fa star fa-star"></span>
+                        </div>
+                        <div class="col p-0">
+                            <span onmouseover="onStarHover(this)" onclick="onStarClick(this)" onmouseout="onStarMove(this)" id='star4' class="fa star fa-star"></span>
+                        </div>
+                        <div class="col p-0">
+                            <span onmouseover="onStarHover(this)" onclick="onStarClick(this)" onmouseout="onStarMove(this)" id='star5' class="fa star fa-star"></span>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

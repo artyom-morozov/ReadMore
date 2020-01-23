@@ -1,10 +1,178 @@
-{% extends "read/base.html" %}
-{%block content%}
-
-
-    <h1>Books</h1>
-    {% for book in books %}
-        <h1>{{ book.title }}</h1> 
-        <p>By {{book.author}}</p>
-    {% endfor %}
-{%endblock content%}
+{% extends "read/base.html" %} 
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+          <h1>Just for you, {{ user.username }}</h1>
+        </div>
+      </div>
+      
+      <div class="row justify-content-between">
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-ride="carousel"
+          data-wrap="false"
+          data-interval="false"
+        >
+          <div class="carousel-inner">
+            {% for chunk in book_chunks %}
+            <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
+              <div style="flex-wrap: nowrap;" class="row">
+                {% for book in chunk %}
+                <div class="col align-self-center">
+                  <div class="book-container">
+                    <img src="{{ book.img_url }}" class="book-img" alt="..." />
+                    <div class="overlay">
+                      <h5>{{ book.title }}</h5>
+                      <p>By {{ book.author }}</p>
+                      <a href="{% url 'book-detail' book.id  %}" class="search btn btn-danger  my-2 my-sm-0">
+                        Rate Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+      
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleControls"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleControls"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <h1>Popular on Read.More</h1>
+        </div>
+      </div>
+      
+      <div class="row justify-content-between">
+        <div
+          id="carouselExampleControls1"
+          class="carousel slide"
+          data-ride="carousel"
+          data-wrap="false"
+          data-interval="false"
+        >
+          <div class="carousel-inner">
+            {% for chunk in book_chunks %}
+            <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
+              <div style="flex-wrap: nowrap;" class="row">
+                {% for book in chunk %}
+                <div class="col align-self-center">
+                  <div class="book-container">
+                    <img src="{{ book.img_url }}" class="book-img" alt="..." />
+                    <div class="overlay">
+                      <h5>{{ book.title }}</h5>
+                      <p>By {{ book.author }}</p>
+                      <a href="{% url 'book-detail' book.id  %}" class="search btn btn-danger  my-2 my-sm-0">
+                        Rate Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+      
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleControls1"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleControls1"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <h1>Best Rated Books</h1>
+        </div>
+      </div>
+      
+      <div class="row justify-content-between">
+        <div
+          id="carouselExampleControls2"
+          class="carousel slide"
+          data-ride="carousel"
+          data-wrap="false"
+          data-interval="false"
+        >
+          <div class="carousel-inner">
+            {% for chunk in book_chunks %}
+            <div class="carousel-item{% if forloop.counter == 1 %} active{% endif %}">
+              <div style="flex-wrap: nowrap;" class="row">
+                {% for book in chunk %}
+                <div class="col align-self-center">
+                  <div class="book-container">
+                    <img src="{{ book.img_url }}" class="book-img" alt="..." />
+                    <div class="overlay">
+                      <h5>{{ book.title }}</h5>
+                      <p>By {{ book.author }}</p>
+                      <a href="{% url 'book-detail' book.id  %}" class="search btn btn-danger  my-2 my-sm-0">
+                        Rate Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+      
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carouselExampleControls2"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carouselExampleControls2"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+</div>
+{% endblock content %}

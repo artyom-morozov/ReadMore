@@ -30,7 +30,7 @@ class RecommendationEngine:
         print("Loading data frames...")
         lines = self.spark.read.option("header", "true").csv(ratings_path).rdd
         ratingsRDD = lines.map(lambda p: Row(userId=int(p[0]), bookId=int(p[1]),
-                                                rating=float(p[2])))
+                                                rating=(float(p[2])))) # scale to 10
         return self.spark.createDataFrame(ratingsRDD)
 
     def loadBookData(self):

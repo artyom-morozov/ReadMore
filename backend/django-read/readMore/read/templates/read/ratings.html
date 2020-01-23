@@ -1,0 +1,43 @@
+{% extends "read/base.html" %} 
+{% block content %}
+    <div class="container">
+        <h1 class="text-center">Books rated by {{ user.username }}</h1>
+        {% for rating in ratings %}
+        <div class="row">
+            <div class="col">
+               <div class="row rating-row">
+                   <div style="padding-left: 0;" class="col-md-auto">
+                       <img src="{{ rating.book.img_url }}" alt="{{ rating.book.title }}">
+                   </div>
+                   <div class="col">
+                       <div class="row">
+                           <h3>{{ rating.book.title }}</h3>
+                       </div>
+                       <div class="row">
+                            <p>{{ rating.book.author }}</p>
+                       </div>
+                       <div class="row">
+                           <p>{{ rating.book.description }}</p>
+                       </div>
+                   </div>
+                   <div class="col-md-3">
+                       <div class="row flex-nowrap justify-content-center">
+                            <div class="col-md-auto col-p"><span class="fa fa-star {% if rating.value >= 1 %}star-active{% endif %} star-sm"></span></div>
+                            <div class="col-md-auto col-p"><span class="fa fa-star {% if rating.value >= 2 %}star-active{% endif %} star-sm"></span></div>
+                            <div class="col-md-auto col-p"><span class="fa fa-star {% if rating.value >= 3 %}star-active{% endif %} star-sm"></span></div>
+                            <div class="col-md-auto col-p"><span class="fa fa-star {% if rating.value >= 4 %}star-active{% endif %} star-sm"></span></div>
+                            <div class="col-md-auto col-p"><span class="fa fa-star {% if rating.value >= 5 %}star-active{% endif %} star-sm"></span></div>
+                       </div>
+                       <div class="row mt-2 justify-content-center">
+                            <a href="https://www.amazon.com/s?k={{ rating.book.title|urlencode }}" target="_blank" data-click-action="track" title="Buy this book"  class="btn btn-primary btn-long">Buy Book</a>
+                       </div>
+                       <div class="row mt-2 justify-content-center">
+                           <a href="{% url 'book-detail' rating.book.id  %}" role="button" class="btn btn-secondary btn-long">Change Rating</a>
+                       </div>
+                   </div>
+               </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

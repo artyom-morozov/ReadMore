@@ -1,0 +1,31 @@
+{% extends "read/base.html" %}
+{% block content %}
+    <div class="container-fluid">
+
+        {% if object_list %}
+            <div class="row">
+                {% for book in object_list %}
+                    <div class="col-md-auto">
+                        <div class="book-container">
+                        <img src="{{ book.img_url }}" class="book-img" alt="..." />
+                        <div class="overlay">
+                            <h5>{{ book.title }}</h5>
+                            <p>By {{ book.author }}</p>
+                            <a href="{% url 'book-detail' book.id  %}" class="search btn btn-danger  my-2 my-sm-0">
+                            Rate Now
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <h1>No Books Found</h1>
+                </div>
+            </div>
+        {% endif %}
+        
+    </div>
+{% endblock content %}

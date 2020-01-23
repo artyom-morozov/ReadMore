@@ -1,0 +1,41 @@
+{% extends "read/base.html" %}
+{% block content %}
+{% load static %}
+<div class="container-fluid">
+    <div style="height: 100%;" class="row align-items-stretch flex-nowrap">
+        <div class="col-xl-6">
+            <div style="height: 100%;" class="row justify-content-center">
+                <div class="col-md-auto align-self-center">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <h1 style="font-weight: normal; text-align:center;font-size: 4.5rem;line-height: 1.2;">
+                                    Welcome to <strong>Read.More</strong></h1>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p style="font-size: 1.25rem;">
+                                        A book recomendation engine that will help you pick your next favorite title to read!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-auto">
+                            <a href="{% url 'login' %}" style="color: white;" class="btn btn-lg btn-primary" >Login</a>
+                        </div>
+                        <div class="col-md-auto">
+                            <a href="{% url 'register' %}" style="color: white;" class="btn btn-secondary btn-lg" >Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div style="height:100vh;" class="col-xl-6">
+            <img style="height:100%; width: 100%;" src="{% static 'images/bg1.jpg' %}" alt="" />
+        </div>
+    </div>
+</div>
+{% endblock content %}
